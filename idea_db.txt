@@ -1,0 +1,4 @@
+redis:
+  - seq_field: holds the sequence number, gets incremented on each write
+  - blocks: maps block sequence number to serialized block
+      - "seq": "..." 
