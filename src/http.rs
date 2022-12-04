@@ -150,7 +150,7 @@ impl Service<Request<Body>> for Svc {
                     // get all messages since id
                     let res: Vec<String> = {
                         let mut redis = cloned_session.db.lock().await;
-                        uor_res!(redis.lrange("messages", id, id + 50), || mk_error(
+                        uor_res!(redis.lrange("messages", id, id + 200), || mk_error(
                             "Failed to get messages from redis".to_string(),
                             500
                         ))
